@@ -28,12 +28,19 @@ para cada cosa en particular.
 La academia tiene varios muebles donde se pueden guardar cosas, para esta primera versión
 solamente se utilizarán armarios convencionales, gabinetes mágicos y baúles
 
-Se puede guardar una cosa en la academia siempre que no esté ya guardada y haya al menos un mueble 
-donde se pueda guardar:
-- Un **baúl** tiene una capacidad máxima de volumen. El volumen usado es la suma de los volumenes de todas 
-  las cosas guardadas en él. Puede guardar una nueva cosa siempre que tenga suficiente espacio: *El volumen
-  de la cosa a guardar más el volumen ya usado no puede superar la capacidad máxima*. 
-- En un **gabinete mágico** sólo se puede guardar cosas que sean mágicas, sin límites.
+Se puede guardar una cosa en la academia siempre que no esté ya guardada 
+y haya al menos un mueble donde se pueda guardar:
+- Un **baúl** tiene una capacidad máxima de volumen.
+   El volumen usado es la suma de los volumenes de todas 
+  las cosas guardadas en él. 
+  
+  Puede guardar una nueva cosa siempre que tenga suficiente espacio:
+   *El volumen
+  de la cosa a guardar más el volumen ya usado no puede superar la capacidad máxima*.
+   
+- En un **gabinete mágico** sólo se puede guardar cosas que sean mágicas, 
+sin límites.
+
 - En un **armario convencional** se puede guardar una cantidad máxima de elementos 
   No importa el volumen de las cosas, solo la cantidad.
 
@@ -101,15 +108,18 @@ otro baúl más de otra capacidad, más gabinetes, etc.*
 
 ## Parte 2:  Utilidad y precio
 
-La **utilidad de un mueble** es un número que sirve como indicador para saber si un mueble está siendo 
-bien usando o no. Se calcula como la división entre la sumatoria de la utilidad de las cosas que 
+La **utilidad de un mueble** es un número que sirve como indicador para saber
+ si un mueble está siendo 
+bien usando o no
+ Se calcula como la división entre la sumatoria de la utilidad de las cosas
+  que 
 se guardan en ese mueble, sobre el precio del mueble. 
 
 ```
  sumatoria(utilidad de las cosas) / precio
 ```
 
-La **utilidad de una cosa** es el volumen más 3 si es mágia más 5 si es reliquia más la utilidad que le aporta
+La **utilidad de una cosa** es el volumen más 3 si es mágica más 5 si es reliquia más la utilidad que le aporta
 la marca. 
 
 ```
@@ -126,15 +136,23 @@ Precios:
 - El precio de un **baúl** se calcula como  el volumen maximo + 2
 - El precio de un **gabinete** se define para cada gabinete
 
-La **utilidad del baúl** se calcula levemente distinto que para el resto de los muebles:
-Además de la fórmula dada para los muebles, se suma un extra. Ese extra es de 2 si
+La **utilidad del baúl** se calcula levemente distinto que para el 
+resto de los muebles:
+Además de la fórmula dada para los muebles, se suma un extra. 
+Ese extra es de 2 si
 todas las cosas que almacena son reliquias.
 ```
  (sumatoria(utilidad de las cosas) / precio ) + 2_siTodasSonReliquias
 ```
 
-Existen también **Baúles Mágicos**, el cual además de tener un extra de 2 en la utilidad si todas las
-cosas que almacena son reliquias, también suma 1 por cada elemento mágico, pero su precio es el doble que 
+Existen también **Baúles Mágicos**, 
+el cual además de tener un extra de 2 en la utilidad 
+si todas las
+cosas que almacena son reliquias, 
+
+también suma 1 por cada elemento mágico, 
+
+pero su precio es el doble que 
 un baul no mágico.
 
 ```
@@ -168,13 +186,17 @@ Armar por fuera de la academia un baul mágico de volumen 12, con la lampara de 
 
 3. **Saber la marca del elemento menos util**
 
-   Es la marca de la cosa que tiene menor utilidad del conjunto obtenido en el requerimiento anterior.
+   Es la marca de la cosa que tiene menor utilidad del conjunto
+   obtenido en el requerimiento anterior.
    
-   En el ejemplo anterior, el conjunto de cosas menos útiles contiene a la pelota, la varita y la escoba. 
+   En el ejemplo anterior, el conjunto de cosas menos útiles contiene a la 
+   pelota, la varita y la escoba. 
    De entre esos 3 el de menor utilidad es la pelota, cuya marca es **cuchuflito**.
 
-4. **Remover de la academia aquellos elementos que pertenecen al conjunto de las cosas menos útiles 
-(lo resuelto en el punto 2.2) y que además no son mágicas**.
+4. **Remover de la academia aquellos elementos que pertenecen 
+al conjunto de las cosas menos útiles 
+(lo resuelto en el punto 2.2) 
+y que además no son mágicas**.
 
    Esta acción solo la puede realizar si la academia tiene al menos 3 muebles.
 
